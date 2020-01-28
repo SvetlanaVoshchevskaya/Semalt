@@ -11,50 +11,56 @@
 </head>
 
 <body>
-    <section class="sitemap-info">
-        <header class="header">
-            <div class="header__logo">
-                <div class="header__title">Submitted sitemaps</div>
-                <img src="./icon/info.png" alt="info">
-            </div>
-            <div class="header__subtitle">
-                <div class="header__subtitle_recrawl">Recrawl sitemap </div>
-                <div class="header__subtitle_remove">Remove sitemap </div>
-            </div>
-        </header>
-        <div class="filters">
-            <form action="" class="filters__form">
-                <input type="text" placeholder="URL or its part">
-                <select name="type" id="type">
-                    <option value="all types" selected>All types</option>
-                </select>
-                <select name="submit" id="submit">
-                    <option value="submitted" selected>Submitted</option>
-                </select>
-                <input type="date" name="" id="">
-                <select name="sitemaps" id="sitemaps">
-                    <option value="All sitemaps" selected>All sitemaps</option>
-                </select>
-            </form>
+    <section class="sitemap">
+        <div class="sitemap-info">
+            <header class="header">
+                <div class="header__logo">
+                    <div class="header__title">Submitted sitemaps</div>
+                    <img src="./icon/info.png" alt="info">
+                </div>
+                <div class="header__subtitle">
+                    <div class="header__subtitle_recrawl">Recrawl sitemap </div>
+                    <div class="header__subtitle_remove">Remove sitemap </div>
+                </div>
+            </header>
+            <div class="filters">
+                <div class="filters__title"> Filters:</div>
 
+                <form action="" class="filters__form">
+                    <input type="text" placeholder="URL or its part">
+                    <select name="type" id="type">
+                        <option value="all types" selected>All types</option>
+                    </select>
+                    <select name="submit" id="submit">
+                        <option value="submitted" selected>Submitted</option>
+                    </select>
+                    <input type="date" name="" class="month">
+                    <select name="sitemaps" id="sitemaps">
+                        <option value="All sitemaps" selected>All sitemaps</option>
+                    </select>
+                </form>
+
+            </div>
+            <table class="information information-js">
+                <thead>
+                    <tr>
+                        <input type="checkbox" />
+                        <td>Sitemap</td>
+                        <td>Type</td>
+                        <td>Submitted</td>
+                        <td>Last check</td>
+                        <td>Status</td>
+                        <td>URLs</td>
+                        <td>Recrawl sitemap</td>
+                        <td>Remove sitemap</td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
-        <table class="information information-js">
-            <thead>
-                <tr>
-                    <input type="checkbox" />
-                    <td>Sitemap</td>
-                    <td>Type</td>
-                    <td>Submitted</td>
-                    <td>Last check</td>
-                    <td>Status</td>
-                    <td>URLs</td>
-                    <td>Recrawl sitemap</td>
-                    <td>Remove sitemap</td>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+
+
     </section>
 
     <script src="js/index.js"></script>
