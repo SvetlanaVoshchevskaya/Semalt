@@ -5,12 +5,12 @@ const table = document.querySelector('.information-js > tbody');
 
 const createView = (arr) => {
   const result = arr.reduce(
-    (acc, el) =>
+    (acc, el,i) =>
       acc +
       `
       <tr> <td>
-      <div> <input type="checkbox" class="check"/> 
-      <label for="check"></label></div>
+      <div> <input type="checkbox"  class="check" id="check${i}" /> 
+      <label for="check${i}"></label></div>
       </td> 
   <td>${el.path}</td> <td>${el.isSitemapsIndex ? 'Sitemaps Index' : ''}</td>
       <td>${new Date(el.lastSubmitted).toDateString()}</td> 
