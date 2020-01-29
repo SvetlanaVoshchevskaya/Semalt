@@ -7,16 +7,20 @@ const createView = (arr) => {
   const result = arr.reduce(
     (acc, el) =>
       acc +
-      `<input type="checkbox" />
-      <tr> <td>${el.path}</td> <td>${
-        el.isSitemapsIndex ? 'Sitemaps Index' : ''
-      }</td>
+      `
+      <tr> <td>
+      <div> <input type="checkbox" class="check"/> 
+      <label for="check"></label></div>
+      </td> 
+  <td>${el.path}</td> <td>${el.isSitemapsIndex ? 'Sitemaps Index' : ''}</td>
       <td>${new Date(el.lastSubmitted).toDateString()}</td> 
       <td>${new Date(el.lastCheck).toDateString()}</td> 
-      <td>${el.errors === 0 ? 'Success' : el.errors}</td> 
+      <td>${el.errors === 0 ? 'Success' : `${el.errors} errors`}</td> 
       <td>${el.urls}</td> 
-      <td><button>Recrewl</button></td> 
-      <td><button><img src="../icon/trash-bin.svg"></img></button></td> 
+      <td><button class="recrewl-btn">Recrewl</button></td> 
+      <td><button class="trash-btn" ><i class="material-icons" data-tooltip="Remove from Search Console" >
+      delete
+      </i></button></td> 
       </tr>`,
     ''
   );
