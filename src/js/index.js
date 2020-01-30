@@ -1,18 +1,21 @@
 'use strict';
 
 const url = 'https://semalt.tech/dev/api/v1/example/test/';
-const table = document.querySelector('.information-js > tbody');
+const tableBody = document.querySelector('.information-js > tbody');
+const table = document.querySelector('.information-js');
 
 const createView = (arr) => {
   const result = arr.reduce(
-    (acc, el,i) =>
+    (acc, el, i) =>
       acc +
       `
       <tr> <td>
-      <div> <input type="checkbox"  class="check" id="check${i}" /> 
-      <label for="check${i}"></label></div>
+      <input type="checkbox"  class="check" id="check${i}" /> 
+      <label for="check${i}"></label>
       </td> 
-  <td>${el.path}</td> <td>${el.isSitemapsIndex ? 'Sitemaps Index' : ''}</td>
+  <td> <a href="${el.path}">${el.path}</a></td> <td>${
+        el.isSitemapsIndex ? 'Sitemaps Index' : ''
+      }</td>
       <td>${new Date(el.lastSubmitted).toDateString()}</td> 
       <td>${new Date(el.lastCheck).toDateString()}</td> 
       <td>${el.errors === 0 ? 'Success' : `${el.errors} errors`}</td> 
@@ -24,7 +27,7 @@ const createView = (arr) => {
       </tr>`,
     ''
   );
-  table.innerHTML = result;
+  tableBody.innerHTML = result;
 };
 
 const fetchData = () => {
@@ -33,4 +36,14 @@ const fetchData = () => {
     .then((data) => createView(data.result.sitemap));
 };
 
+const addStyleTr = (e) => {
+  const target = e.target;
+
+  if (target.closest('tr').classList.contains('tr__active')) {
+    target.closest('tr').classList.remove('tr__active');
+  } else {
+    target.closest('tr').classList.add('tr__active');
+  }
+};
+table.addEventListener('change', addStyleTr);
 window.addEventListener('load', fetchData);
