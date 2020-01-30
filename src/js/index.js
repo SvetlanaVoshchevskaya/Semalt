@@ -13,7 +13,7 @@ const createView = (arr) => {
       <input type="checkbox"  class="check" id="check${i}" /> 
       <label for="check${i}"></label>
       </td> 
-  <td> <a href="${el.path}">${el.path}</a></td> <td>${
+  <td> <a href="${el.path}" target="_blank">${el.path}</a></td> <td>${
         el.isSitemapsIndex ? 'Sitemaps Index' : ''
       }</td>
       <td>${new Date(el.lastSubmitted).toDateString()}</td> 
@@ -41,9 +41,12 @@ const addStyleTr = (e) => {
 
   if (target.closest('tr').classList.contains('tr__active')) {
     target.closest('tr').classList.remove('tr__active');
-  } else {
+  } 
+  else {
     target.closest('tr').classList.add('tr__active');
   }
 };
+
+
 table.addEventListener('change', addStyleTr);
 window.addEventListener('load', fetchData);

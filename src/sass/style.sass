@@ -90,17 +90,37 @@
         background: #F6F8FE
         th:nth-child(1)
             width: 40px
+            position: relative
         th:nth-child(2)
             text-align: left
+                 
         
-          
     tbody tr:nth-child(even)
         border: 1px solid #F2F4FB
     tr, td, th
         padding: 10px
     td
+        font-family: 'Roboto'
+        font-weight: 400
+        font-size: 14px
+        line-height: 16px
         text-align: center
-   
+    td:nth-child(1)
+        position: relative
+    td:nth-child(2)
+        width: 133px
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        line-height: 45px
+        vertical-align: middle
+        
+    td > a::after
+        content: ''
+        display: block
+        background-image: url('../icon/go-link.svg')    
+
+
     input[type='checkbox']
         z-index: -1
         opacity: 0
@@ -114,8 +134,11 @@
         cursor: pointer
         display: inline-block
         opacity: 1
-        text-align: center
         line-height: 18px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)        
  
     input[type='checkbox']:checked  + label::before
         content: ''
@@ -126,6 +149,11 @@
         border: none
 .tr__active 
     background-color: #E7F6FF;
+
+.success_status
+    color: #2AC9A1
+.fail_status
+    color: #fb6868    
 
         
     //button styles
