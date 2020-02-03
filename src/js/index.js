@@ -18,7 +18,9 @@ const createView = (arr) => {
       }</td>
       <td>${new Date(el.lastSubmitted).toDateString()}</td> 
       <td>${new Date(el.lastCheck).toDateString()}</td> 
-      <td>${el.errors === 0 ? 'Success' : `${el.errors} errors`}</td> 
+      <td class="status">${
+        el.errors === 0 ? 'Success' : `${el.errors} errors`
+      }</td> 
       <td>${el.urls}</td> 
       <td><button class="recrewl-btn">Recrewl</button></td> 
       <td><button class="trash-btn" ><i class="material-icons" data-tooltip="Remove from Search Console" >
@@ -28,6 +30,7 @@ const createView = (arr) => {
     ''
   );
   tableBody.innerHTML = result;
+  addStatusStyle();
 };
 
 const fetchData = () => {
@@ -41,12 +44,21 @@ const addStyleTr = (e) => {
 
   if (target.closest('tr').classList.contains('tr__active')) {
     target.closest('tr').classList.remove('tr__active');
-  } 
-  else {
+  } else {
     target.closest('tr').classList.add('tr__active');
   }
 };
 
+const addStatusStyle = () => {
+  const status = document.querySelectorAll('.status');
+  Array.from(status).map((el) => {
+    if (el.innerHTML === 'Success') {
+      el.classList.add('status__success');
+    } else {
+      el.classList.add('status__fail');
+    }
+  });
+};
 
 table.addEventListener('change', addStyleTr);
-window.addEventListener('load', fetchData);
+window.addEventListener('DOMContentLoaded', fetchData);

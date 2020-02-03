@@ -36,12 +36,14 @@
                         <option value="submitted" selected>Submitted</option>
                     </select>
                     <input type="date" name="" class="month">
-                    <select name="sitemaps" id="sitemaps">
-                        <option value="All sitemaps" selected>All sitemaps</option>
-                        <option value="Success">Success</option>
-                        <option value="Couldn't fetch">Couldn't fetch</option>
-                        <option value="Errors">Errors</option>
-                    </select>
+                    <div class="filters__sitemap">
+                        <select name="sitemaps" id="status">
+                            <option value="All sitemaps" selected>All sitemaps</option>
+                            <option value="Success">Success</option>
+                            <option value="Couldn't fetch">Couldn't fetch</option>
+                            <option value="Errors">Errors</option>
+                        </select>
+                    </div>
                 </form>
 
             </div>
@@ -49,10 +51,8 @@
                 <thead>
                     <tr>
                         <th>
-                            
-                                <input type="checkbox" class="check" id="check" />
-                                <label for="check"></label> 
-
+                            <input type="checkbox" class="check" id="check" />
+                            <label for="check"></label>
                         </th>
                         <th>Sitemap</th>
                         <th>Type</th>

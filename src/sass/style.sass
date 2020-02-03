@@ -44,6 +44,23 @@
     &__subtitle_recrawl
         margin-right: 26px
 //block filters styles
+#status 
+    -webkit-appearance: none
+    -moz-appearance: none
+    -ms-appearance: none
+    appearance: none
+    outline: 0
+    box-shadow: none
+    background-image: none
+    border: 0
+    cursor: pointer
+    flex: 1
+    padding: 0.5em
+    font-family: 'Roboto'
+    font-weight: normal
+    font-size: 14px
+    line-height: 16px
+    letter-spacing: 0.01em
 
 .filters
     display: flex
@@ -64,6 +81,8 @@
         width: 100%
         margin-top: 13px
         margin-left: 23px
+    &__form
+        display: flex    
     
     &__form > input,
     &__form > select
@@ -76,6 +95,37 @@
         height: 30px
         padding-left: 12px
         margin-right: 16px
+    &__sitemap
+        display: flex
+        position: relative
+        width: 156px
+        heigth: 27px
+        margin: 0
+        border: 1px solid #C2CFE0
+        border-radius: 5px
+        overflow: hidden
+        background-color: #fff
+        
+        &::after
+            content: ''
+            background-image: url('../icon/chevron-down-solid.png')
+            background-position: center
+            background-repeat: no-repeat
+            position: absolute
+            top: 0
+            right: 0
+            pointer-events: none
+            border-left: 1px solid #C2CFE0
+            border-radius: 0px 5px 5px 0px
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 30px
+            height: 30px
+            
+            
+
+
 
 // table styles
 .information 
@@ -110,17 +160,17 @@
     td:nth-child(2)
         width: 133px
         display: block
+        text-align: left
         overflow: hidden
         text-overflow: ellipsis
         line-height: 45px
         vertical-align: middle
         
-    td > a::after
-        content: ''
-        display: block
-        background-image: url('../icon/go-link.svg')    
-
-
+    td > a
+        background-image: url('../icon/go-link.svg')
+        background-repeat: no-repeat
+        background-position: right
+  
     input[type='checkbox']
         z-index: -1
         opacity: 0
@@ -148,12 +198,13 @@
         background-position: center
         border: none
 .tr__active 
-    background-color: #E7F6FF;
+    background-color: #E7F6FF
 
-.success_status
-    color: #2AC9A1
-.fail_status
-    color: #fb6868    
+.status
+    &__success
+        color: #2AC9A1
+    &__fail
+        color: #fb6868
 
         
     //button styles
