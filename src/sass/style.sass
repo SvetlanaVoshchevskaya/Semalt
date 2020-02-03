@@ -12,7 +12,15 @@
     width: 920px
     min-height: 394px
     margin: 0 auto
+::-webkit-datetime-edit-text
+    opacity: 0
 
+::-webkit-clear-button,
+::-webkit-inner-spin-button 
+    display: none
+
+::-webkit-calendar-picker-indicator
+    opacity: 0
     // table header style
 .header
     padding: 22px 30px 20px 24px
@@ -44,7 +52,8 @@
     &__subtitle_recrawl
         margin-right: 26px
 //block filters styles
-#status 
+#status, #submitted, #type,
+.month
     -webkit-appearance: none
     -moz-appearance: none
     -ms-appearance: none
@@ -61,6 +70,8 @@
     font-size: 14px
     line-height: 16px
     letter-spacing: 0.01em
+    
+
 
 .filters
     display: flex
@@ -82,30 +93,26 @@
         margin-top: 13px
         margin-left: 23px
     &__form
-        display: flex    
-    
-    &__form > input,
-    &__form > select
+        display: flex
+        justify-content: space-between
         width: 100%
-        background: #FFFFFF
-        border: 1px solid #C2CFE0
-        box-sizing: border-box
-        border-radius: 5px
-        width: 162px
-        height: 30px
-        padding-left: 12px
-        margin-right: 16px
-    &__sitemap
+        padding: 0 31px 11px 21px    
+    &__url
+        padding: 0.5em
+  
+    &__sitemap,
+    &__submitted,
+    &__type,
+    &__month    
         display: flex
         position: relative
-        width: 156px
-        heigth: 27px
+        width: 162px
+        heigth: 30px
         margin: 0
         border: 1px solid #C2CFE0
         border-radius: 5px
         overflow: hidden
         background-color: #fff
-        
         &::after
             content: ''
             background-image: url('../icon/chevron-down-solid.png')
@@ -239,13 +246,11 @@
     font-family: 'Roboto'
     font-weight: 400
     font-size: 14px
-    line-height: 14px
+    line-height: 32px
     color: #FAFAFA
     pointer-events: none
-    display: inline-block
-    right: 0
-    top: 0
-    padding: 0.5em
+    right: 14px
+    padding: 0.25em
     width: 204px
     height: 32px
 [data-tooltip]:hover::after

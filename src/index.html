@@ -28,14 +28,21 @@
                 <div class="filters__title"> Filters:</div>
 
                 <form action="" class="filters__form">
-                    <input type="text" placeholder="URL or its part">
-                    <select name="type" id="type">
-                        <option value="all types" selected>All types</option>
-                    </select>
-                    <select name="submit" id="submit">
-                        <option value="submitted" selected>Submitted</option>
-                    </select>
-                    <input type="date" name="" class="month">
+                    <input type="text" placeholder="URL or its part" class="filters__url">
+                    <div class="filters__type">
+                        <select name="type" id="type">
+                            <option value="all types" selected>All types</option>
+                        </select>
+                    </div>
+                    <div class="filters__submitted">
+                        <select name="submit" id="submitted">
+                            <option value="submitted" selected>Submitted</option>
+                        </select>
+                    </div>
+                    <div class="filters__month">
+                        <input type="date" name="" class="month">
+                    </div>
+
                     <div class="filters__sitemap">
                         <select name="sitemaps" id="status">
                             <option value="All sitemaps" selected>All sitemaps</option>
